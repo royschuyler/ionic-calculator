@@ -4,8 +4,8 @@
   <description>
         An Ionic Framework and Cordova project.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="royschuyler@yahoo.com" href="http://ionicframework.com/">
+      Roy Schuyler
     </author>
   <content src="index.html"/>
   <access origin="*"/>

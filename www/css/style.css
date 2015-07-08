@@ -1,1 +1,23 @@
 /* Empty. Add your own CSS if you like */
+ion-content {
+  background: black;
+}
+
+.trig {
+  background: lightblue;
+}
+
+.symbol {
+  background: blue;
+  color: white;
+}
+
+.clear {
+  background: green;
+  color: white;
+}
+
+.equal {
+  background: goldenrod;
+  color: white;
+}
