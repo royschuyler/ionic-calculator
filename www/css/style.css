@@ -21,3 +21,10 @@ ion-content {
   background: goldenrod;
   color: white;
 }
+
+.display{
+  font-size: 30px;
+  margin: 10px;
+  text-align: right;
+  color: white;
+}
