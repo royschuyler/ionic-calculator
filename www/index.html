@@ -33,16 +33,16 @@
       <div class="display">{{output}}</div>
       <div></div>
       <div class="button-bar">
-        <a class="button">x<sup>2</sup></a>
-        <a class="button trig">sin</a>
-        <a class="button trig">cos</a>
-        <a class="button trig">tan</a>
+        <a class="button" ng-click="square()">x<sup>2</sup></a>
+        <a class="button trig" ng-click="updateTrig('sin')">sin</a>
+        <a class="button trig" ng-click="updateTrig('cos')">cos</a>
+        <a class="button trig" ng-click="updateTrig('tan')">tan</a>
       </div>
       <div class="button-bar">
-        <a class="button">√</a>
-        <a class="button trig">sin<sup>-1</sup></a>
-        <a class="button trig">cos<sup>-1</sup></a>
-        <a class="button trig">tan<sup>-1</sup></a>
+        <a class="button" ng-click="sqrt()">√</a>
+        <a class="button trig" ng-click="updateTrig('asin')">sin<sup>-1</sup></a>
+        <a class="button trig" ng-click="updateTrig('acos')">cos<sup>-1</sup></a>
+        <a class="button trig" ng-click="updateTrig('atan')">tan<sup>-1</sup></a>
       </div>
       <div class="button-bar">
         <a class="button" value='1' ng-click="updateOutput(1)">1</a>
@@ -64,12 +64,12 @@
       </div>
       <div class="button-bar">
         <a class="button" value='0' ng-click="updateOutput(0)">0</a>
-        <a class="button"> </a>
-        <a class="button">.</a>
+        <a class="button" id="myBtn" ng-click="updateOutput('-'); disable()">+/-</a>
+        <a class="button" id="myBtn" ng-click="updateOutput('.'); disable()">.</a>
         <a class="button symbol" ng-click="updateOperation('-')">-</a>
       </div>
       <div class="button-bar">
-        <a class="button clear">clear</a>
+        <a class="button clear" ng-click="clear()">clear</a>
         <a class="button equal" ng-click="calculate()">=</a>
       </div>
       </ion-content>

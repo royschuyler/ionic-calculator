@@ -11,6 +11,7 @@ angular.module('starter')
   $scope.firstSetArr = [];
   $scope.operation = null;
   $scope.ready = 0;
+  $scope.trig = '';
 
 
 $scope.updateOutput = function(btn) {
@@ -41,6 +42,7 @@ $scope.calculate = function(){
   $scope.numberArr =[];
   console.log($scope.numberArr);
   console.log($scope.operation);
+  document.getElementById("myBtn").disabled = false;
 
   if ($scope.operation === '+'){
     $scope.number = Number($scope.firstSetArr[0]) + Number($scope.firstSetArr[1]);
@@ -65,93 +67,64 @@ $scope.calculate = function(){
     console.log($scope.number);
     $scope.output = $scope.number;
   }
-
 }
 
 
+$scope.updateTrig = function(trick){
+  $scope.trig = trick;
 
+  if ($scope.trig === 'sin') {
+  $scope.output = Math.sin($scope.ready)
+};
 
+  if ($scope.trig === 'cos') {
+  $scope.output = Math.cos($scope.ready)
+};
 
+  if ($scope.trig === 'tan') {
+  $scope.output = Math.tan($scope.ready)
+};
 
+  if ($scope.trig === 'asin') {
+  $scope.output = Math.asin($scope.ready)
+};
 
+  if ($scope.trig === 'acos') {
+  $scope.output = Math.acos($scope.ready)
+};
 
+  if ($scope.trig === 'atan') {
+  $scope.output = Math.atan($scope.ready)
+};
+}
 
+$scope.clear = function(){
+  $scope.output = 0;
+  $scope.number = 0;
+  $scope.operation = null;
+  $scope.nextNumber = null;
+  $scope.pendingValue = null;
+  $scope.lastOperation = null;
+  $scope.numberArr =[];
+  $scope.firstSetArr = [];
+  $scope.operation = null;
+  $scope.ready = 0;
+  $scope.trig = '';
+  document.getElementById("myBtn").disabled = false;
+};
 
+$scope.square = function(){
+  $scope.output = $scope.ready * $scope.ready;
+};
 
+$scope.sqrt = function(){
+  $scope.output = Math.sqrt($scope.ready)
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // $scope.updateOutput = function(btn) {
-  //   if($scope.output == "0" || $scope.newNumber) {
-  //     $scope.output = btn;
-  //     $scope.newNumber = false;
-  //   } else {
-  //       $scope.output += String(btn);
-  //   }
-  //   $scope.pendingValue = toNumber($scope.output);
-  // };
-
-  // $scope.add = function() {
-  //   if($scope.pendingValue) {
-  //     if($scope.runningTotal && $scope.pendingOperation == ADD ) {
-  //       $scope.runningTotal += $scope.pendingValue;
-  //     } else if($scope.runningTotal && $scope.pendingOperation == SUBTRACT ) {
-  //       $scope.runningTotal -= $scope.pendingValue;
-  //     }
-  //     else {
-  //       $scope.runningTotal = $scope.pendingValue;
-  //     }
-  //   }
-  //   setOperationToken(ADD);
-  //   setOutput(String($scope.runningTotal));
-  //   $scope.pendingOperation = ADD;
-  //   $scope.newNumber = true;
-  //   $scope.pendingValue = null;
-  // };
-
-  //   $scope.subtract = function() {
-  //   if($scope.pendingValue) {
-  //     if($scope.runningTotal && ($scope.pendingOperation == SUBTRACT) ) {
-  //       $scope.runningTotal -= $scope.pendingValue;
-  //     } else if($scope.runningTotal && $scope.pendingOperation == ADD ) {
-  //       $scope.runningTotal += $scope.pendingValue;
-  //     } else {
-  //       $scope.runningTotal = $scope.pendingValue;
-  //     }
-  //   }
-  //   setOperationToken(SUBTRACT);
-  //   setOutput(String($scope.runningTotal));
-  //   $scope.pendingOperation = SUBTRACT;
-  //   $scope.newNumber = true;
-  //   $scope.pendingValue = null;
-  // };
-
-
-
-
-
-
-
-
-
-
-
+$scope.disable = function(){
+  document.getElementById("myBtn").disabled = true;
+  console.log('disabled');
+}
 
 
 }]);
